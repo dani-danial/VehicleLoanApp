@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Vehicle Loan Estimator</string>
+
+    <string name="author_info">Author: MUHAMMAD DANIAL DANNY BIN MAZLAN
+Matric No: 2023885288
+Course: CDCS2515A</string>
+
+    <string name="copyright">© 2025 All Rights Reserved</string>
+
+    <string name="github_text">GitHub Repository</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+</resources>

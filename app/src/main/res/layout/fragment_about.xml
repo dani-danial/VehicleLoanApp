@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- App Icon -->
+        <ImageView
+            android:src="@mipmap/ic_launcher_round"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+        <!-- App Name -->
+        <TextView
+            android:text="Vehicle Loan Estimator"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"/>
+
+        <!-- Author Info -->
+        <TextView
+            android:id="@+id/tvAuthorName"
+            android:text="Author: MUHAMMAD DANIAL DANNY BIN MAZLAN"
+            android:textAlignment="center"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvMatricNo"
+            android:text="Matric No: 2023885288"
+            android:textAlignment="center"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvCourse"
+            android:text="Course: CDCS2515A"
+            android:textAlignment="center"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Copyright -->
+        <TextView
+            android:id="@+id/tvCopyright"
+            android:text="© 2025 All Rights Reserved"
+            android:textAlignment="center"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- GitHub Repository (Clickable) -->
+        <TextView
+            android:id="@+id/tvGithub"
+            android:text="GitHub Repository"
+            android:textColor="#0070FF"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:autoLink="web"
+            android:linksClickable="true"/>
+    </LinearLayout>
+</ScrollView>
