@@ -12,9 +12,10 @@
 
         <!-- App Icon -->
         <ImageView
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/berserk"
             android:layout_width="100dp"
-            android:layout_height="100dp" />
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"/>
 
         <!-- App Name -->
         <TextView
