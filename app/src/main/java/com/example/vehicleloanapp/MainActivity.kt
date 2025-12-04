@@ -3,51 +3,43 @@ package com.example.vehicleloanapp
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.drawerlayout.widget.DrawerLayout
-import com.google.android.material.navigation.NavigationView
-import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var drawerLayout: DrawerLayout
-    private lateinit var navView: NavigationView
+    private lateinit var bottomNav: BottomNavigationView
     private lateinit var toolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        drawerLayout = findViewById(R.id.drawer_layout)
-        navView = findViewById(R.id.nav_view)
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        // Drawer toggle
-        val toggle = ActionBarDrawerToggle(
-            this,
-            drawerLayout,
-            toolbar,
-            R.string.drawer_open,
-            R.string.drawer_close
-        )
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
+        // Initialize Bottom Navigation View
+        bottomNav = findViewById(R.id.bottom_nav)
 
-        // Load HomeFragment by default
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, HomeFragment())
-            .commit()
-
-        // Handle navigation menu clicks
-        navView.setNavigationItemSelectedListener { menuItem ->
+        // Set up the listener for bottom navigation item selection
+        bottomNav.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.nav_home -> openFragment(HomeFragment())
-                R.id.nav_about -> openFragment(AboutFragment())
+                R.id.nav_home -> {
+                    openFragment(HomeFragment())
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.nav_about -> {
+                    openFragment(AboutFragment())
+                    return@setOnNavigationItemSelectedListener true
+                }
+                else -> false
             }
-            drawerLayout.closeDrawer(GravityCompat.START)
-            true
+        }
+
+        // Load HomeFragment by default and select the Home item
+        if (savedInstanceState == null) {
+            bottomNav.selectedItemId = R.id.nav_home
+            openFragment(HomeFragment())
         }
     }
 
@@ -55,13 +47,5 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit()
-    }
-
-    override fun onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
     }
 }
