@@ -47,6 +47,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:backgroundTint="#808080"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="10dp"/>
+
         <TextView
             android:id="@+id/tvLoanAmount"
             android:text="Loan Amount: -"
