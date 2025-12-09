@@ -1,4 +1,4 @@
-# Vehicle Loan Estimator App 🚗
+# Vehicle Loan  App 🚗
 
 ## Student Information
 * **Name:** MUHAMMAD DANIAL DANNY BIN MAZLAN
